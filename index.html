@@ -1,0 +1,39 @@
+
+<html>
+    <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country', 'Cases', 'Deaths'],
+          ['United States', 970757, 54941],
+          ['Spain', 226629, 23190],
+          ['Italy', 197675, 26644],
+          ['France', 161488, 22614],
+          ['Germany', 157114, 5884],
+        ['UK', 152840, 20732]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'Countries Facing Highest Rates of COVID-19 Cases',
+            subtitle: '(Data as of 4/26/2020)',
+          }
+            
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
+
+
